@@ -2,6 +2,7 @@ import Hello from "@/components/HelloWorld";
 import Posts from "@/components/pages/PostsPage";
 import NewPost from "@/components/pages/NewPostPage";
 import EditPost from "@/components/pages/EditPostPage";
+
 const routes = [
   {
     path: "/",

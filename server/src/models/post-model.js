@@ -5,7 +5,10 @@ const PostSchema = new Schema({
     type: String,
     unique: true
   },
-  description: {
+  categories: {
+    type: String
+  },
+  content: {
     type: String
   }
 });

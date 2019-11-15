@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/post-model");
 
-router.post("/posts", (req, res) => {
+router.post("/api/posts", (req, res) => {
   const post = new Post({
     title: req.body.title,
-    description: req.body.description
+    categories: req.body.categories,
+    content: req.body.content
   });
   console.log(post);
   post.save((err, data) => {
@@ -20,8 +21,8 @@ router.post("/posts", (req, res) => {
   });
 });
 
-router.get("/posts", (req, res) => {
-  Post.find({}, "title description", (err, posts) => {
+router.get("/api/posts", (req, res) => {
+  Post.find({}, "title categories content", (err, posts) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -34,8 +35,8 @@ router.get("/posts", (req, res) => {
   });
 });
 
-router.get("/posts/:id", (req, res) => {
-  Post.findById(req.params.id, "title description", (err, post) => {
+router.get("/api/posts/:id", (req, res) => {
+  Post.findById(req.params.id, "title categories content", (err, post) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -44,16 +45,19 @@ router.get("/posts/:id", (req, res) => {
   });
 });
 
-router.put("/posts/:id", (req, res) => {
-  Post.findById(req.params.id, "title description", (err, post) => {
+router.put("/api/posts/:id", (req, res) => {
+  Post.findById(req.params.id, "title categories content", (err, post) => {
     if (err) {
       console.log(err);
     } else {
       if (req.body.title) {
         post.title = req.body.title;
       }
-      if (req.body.description) {
-        post.description = req.body.description;
+      if (req.body.categories) {
+        post.categories = req.body.categories;
+      }
+      if (req.body.content) {
+        post.content = req.body.content;
       }
       post.save(err => {
         if (err) {
@@ -66,7 +70,7 @@ router.put("/posts/:id", (req, res) => {
   });
 });
 
-router.delete("/posts/:id", (req, res) => {
+router.delete("/api/posts/:id", (req, res) => {
   Post.remove(
     {
       _id: req.params.id
