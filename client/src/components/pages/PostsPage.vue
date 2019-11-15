@@ -1,7 +1,7 @@
-
 <template>
   <div class="posts">
-    <h1>Posts</h1>This file will list all the posts.
+    <h1>Posts</h1>
+    This file will list all the posts.
     <div v-for="post in posts">
       <p>
         <span>

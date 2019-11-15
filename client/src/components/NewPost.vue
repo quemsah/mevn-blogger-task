@@ -1,43 +1,49 @@
 <template>
   <div class="posts">
     <h1>Add Post</h1>
-      <div class="form">
-        <div>
-          <input type="text" name="title" placeholder="Title" v-model="title">
-        </div>
-        <div>
-          <textarea rows="15" cols="15" placeholder="Description" v-model="description"></textarea>
-        </div>
-        <div>
-          <button class="app_post_btn" @click="addPost">Add</button>
-        </div>
+    <div class="form">
+      <div>
+        <input type="text" name="title" placeholder="Title" v-model="title" />
       </div>
+      <div>
+        <textarea
+          rows="15"
+          cols="15"
+          placeholder="Description"
+          v-model="description"
+        ></textarea>
+      </div>
+      <div>
+        <button class="app_post_btn" @click="addPost">Add</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import PostsService from '@/services/PostsService'
+import PostsService from "@/services/PostsService";
 export default {
-  name: 'NewPost',
-  data () {
+  name: "NewPost",
+  data() {
     return {
-      title: '',
-      description: ''
-    }
+      title: "",
+      description: ""
+    };
   },
   methods: {
-    async addPost () {
+    async addPost() {
       await PostsService.addPost({
         title: this.title,
         description: this.description
-      })
-      this.$router.push({ name: 'Posts' })
+      });
+      this.$router.push({ name: "Posts" });
     }
   }
-}
+};
 </script>
 <style type="text/css">
-.form input, .form textarea {
+.form input,
+.form textarea {
   width: 500px;
   padding: 10px;
   border: 1px solid #e0dede;
