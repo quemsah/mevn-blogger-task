@@ -4,6 +4,19 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 import "@/plugins/bootstrap";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCoffee,
+  faTrashAlt,
+  faEdit
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faCoffee);
+library.add(faTrashAlt);
+library.add(faEdit);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 

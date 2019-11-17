@@ -19,6 +19,7 @@ module.exports = {
   plugins: ["vue"],
   // add your custom rules here
   rules: {
+    quotes: [2, "double", { avoidEscape: true }],
     // allow async-await
     "generator-star-spacing": "off",
     // allow debugger during development
