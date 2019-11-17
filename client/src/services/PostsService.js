@@ -1,4 +1,5 @@
-import api from "@/services/api";
+import api from "../services/Api"
+//    Module not found: Error: Can't resolve '@/services/Api' 
 export default {
   fetchPosts() {
     return api().get("api/posts");
