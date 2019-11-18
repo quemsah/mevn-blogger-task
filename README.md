@@ -5,15 +5,13 @@ Task: https://kodaktor.ru/blogger_task
 
 Routes:
 
+```sh
 GET /api/posts
-
 POST /api/posts
-
 GET /api/posts/:id
-
 PUT /api/posts/:id
-
 DELETE /api/posts/:id
+```
 
 which do exactly what you think they do.
 
