@@ -1,15 +1,26 @@
 # mevn-blogger-task
 Simple MEVN full stack application with CRUD operations for posts using REST API.
+
 Task: https://kodaktor.ru/blogger_task
+
 Routes:
+
 GET /api/posts
+
 POST /api/posts
+
 GET /api/posts/:id
+
 PUT /api/posts/:id
+
 DELETE /api/posts/:id
+
 which do exactly what you think they do.
+
 Backend is deployed to Heroku: https://blogger-task-server.herokuapp.com/api/posts
+
 Frontend is deployed to Firebase: https://blogger-task.firebaseapp.com/posts
+
 **(Хероку бекенд не мгновенно пробуждается, поэтому надо немного подождать...)**
 
 ## Made with
